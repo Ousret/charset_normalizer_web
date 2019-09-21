@@ -1,0 +1,5 @@
+charset_normalizer>=1.0.0
+chardet==3.0.4
+cchardet
+flask
+flask_limiter
