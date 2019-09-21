@@ -3,6 +3,8 @@ from flask import Flask, render_template, jsonify, request
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 from charset_normalizer import CharsetNormalizerMatches as CnM
 from chardet import detect as chardet_detect
 from cchardet import detect as cchardet_detect
@@ -10,6 +12,7 @@ from cchardet import detect as cchardet_detect
 from base64 import b64encode
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 
