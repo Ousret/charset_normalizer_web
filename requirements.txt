@@ -3,4 +3,4 @@ chardet==4.0.0
 cchardet
 flask
 flask_limiter
-Werkzeug>0.14.1
+Werkzeug==0.14.1
