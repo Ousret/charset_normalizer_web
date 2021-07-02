@@ -53,8 +53,8 @@ def detect():
                 'aliases': r_.encoding_aliases,
                 'alphabets': r_.alphabets,
                 'language': r_.language,
-                'chaos': str(round(r_.chaos * 100., ndigits=3)) + ' %',
-                'coherence': str(round((1. - r_.coherence) * 100., ndigits=3)) + ' %',
+                'chaos': str(r_.percent_chaos) + ' %',
+                'coherence': str(r_.percent_coherence) + ' %',
                 'could_be': r_.could_be_from_charset
             } if r_ is not None else None,
             'chardet': k_,
