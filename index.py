@@ -38,7 +38,7 @@ def detect():
 
     byte_str = my_file.stream.read()
 
-    r_ = CnM.from_bytes(byte_str).best().first()
+    r_ = CnM.from_bytes(byte_str).best()
 
     k_ = chardet_detect(byte_str)
     k_['confidence'] = str(round(k_['confidence'] * 100., ndigits=3)) + ' %' if k_['confidence'] is not None else None
