@@ -1,6 +1,6 @@
-charset_normalizer>=1.0.0
+charset_normalizer>=2.0.11
 chardet==4.0.0
 cchardet
 flask
 flask_limiter
-Werkzeug==1.0
+Werkzeug
