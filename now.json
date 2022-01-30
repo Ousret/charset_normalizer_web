@@ -2,7 +2,7 @@
   "version": 2,
   "name": "barebone-serverless-api-zeit-now",
   "builds": [
-    { "src": "index.py", "use": "@now/python" }
+    { "src": "index.py", "use": "@vercel/python" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "index.py" }
