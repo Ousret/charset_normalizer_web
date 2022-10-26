@@ -5,7 +5,7 @@ from flask_limiter.util import get_remote_address
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from charset_normalizer import CharsetNormalizerMatches as CnM
+from charset_normalizer import from_bytes
 from chardet import detect as chardet_detect
 from cchardet import detect as cchardet_detect
 
@@ -38,7 +38,7 @@ def detect():
 
     byte_str = my_file.stream.read()
 
-    r_ = CnM.from_bytes(byte_str).best()
+    r_ = from_bytes(byte_str).best()
 
     k_ = chardet_detect(byte_str)
     k_['confidence'] = str(round(k_['confidence'] * 100., ndigits=3)) + ' %' if k_['confidence'] is not None else None
