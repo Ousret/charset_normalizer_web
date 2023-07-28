@@ -17,9 +17,9 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
 
 limiter = Limiter(
-    app,
-    key_func=get_remote_address,
-    default_limits=["1 per second"]
+    get_remote_address,
+    app=app,
+    default_limits=["1 per second"],
 )
 
 
